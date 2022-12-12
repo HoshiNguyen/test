@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đồ án cuối kỳ - nhóm 07</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="row">
+    <div class="traffic-light col-traffic_light">
+      <div class="traffic-light1">
+        <div id="red1" class="bulb"></div>
+        <div id="yellow1" class="bulb"></div>
+        <div id="green1" class="bulb"></div>
+      </div>
+
+      <div class="traffic-light2">
+        <div id="red2" class="bulb"></div>
+        <div id="yellow2" class="bulb"></div>
+        <div id="green2" class="bulb"></div>
+      </div>
+
+      <div class="traffic-light3">
+        <div id="red3" class="bulb"></div>
+        <div id="yellow3" class="bulb"></div>
+        <div id="green3" class="bulb"></div>
+      </div>
+
+      <div class="traffic-light4">
+        <div id="red4" class="bulb"></div>
+        <div id="yellow4" class="bulb"></div>
+        <div id="green4" class="bulb"></div>
+      </div>
+    </div>
+
+    <div class="col-dashboard">
+      <div id="subent-value">
+        <div id="current-name">Mode:</div>
+        <div id="read-g1">G1 = </div>
+        <div id="read-y1">Y1 = </div>
+        <div id="read-r1">R1 = </div>
+        <div id="read-g2">G2 = </div>
+        <div id="read-y2">Y2 = </div>
+        <div id="read-r2">G2 = </div>
+      </div>
+
+      <div class="options">
+        <button onclick="clearData(); FetchAllData(); ">Load data</button>
+
+        <div class="select">
+          <button onclick="showForm('form-select')">Select mode</button>
+          <div class="form-select">
+            <h1 class="form-heading">Chọn mode:</h1>
+            <label for="">Nhập tên:</label>
+            <input id="name-select" type="text">
+            <input class="submit-btn" type="button" value="OK" onclick="selectMode()"></li>
+          </div>
+        </div>
+
+        <div class="add-mode">
+          <button onclick="showForm('form-create')">Add mode</button>
+          <div class="form-create">
+            <ul>
+              <h1 class="form-heading">Thêm chế độ đèn</h1>
+              <label class="name-input" for="name"><b>Name</b></label>
+              <input id="name-inp" class="name-input" type="text" placeholder="Enter name" name="name" required>
+              <li>
+                <label for="Red 1"><b>Red 1</b></label>
+                <input id="Red1-inp" type="number" placeholder="Red 1" name="Red 1" required>
+                <label for="Yellow 1"><b>Yellow 1</b></label>
+                <input id="Yellow1-inp" type="number" placeholder="Yellow 1" name="Yellow 1" required>
+                <label for="Green 1"><b>Green 1</b></label>
+                <input id="Green1-inp" type="number" placeholder="Green 1" name="Green 1" required>
+              </li>
+              <li>
+                <label for="Red 2"><b>Red 2</b></label>
+                <input id="Red2-inp" type="number" placeholder="Red 2" name="Red 2" required>
+                <label for="Yellow 2"><b>Yellow 2</b></label>
+                <input id="Yellow2-inp" type="number" placeholder="Yellow 2" name="Yellow 2" required>
+                <label for="Green 2"><b>Green 2</b></label>
+                <input id="Green2-inp" type="number" placeholder="Green 2" name="Green 2" required>
+              </li>
+              <li><input class="submit-btn" type="button" value="OK" onclick="addFormDataToFirebase()"></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="delete-mode">
+          <button onclick="showForm('form-delete')">Delete mode</button>
+          <div class="form-delete">
+            <h1 class="form-heading">Nhap name cua mode can xoa</h1>
+            <input id="name-delete" type="text">
+            <input class="submit-btn" type="button" value="OK" onclick="deleteModeByNameUserInp()"></li>
+          </div>
+        </div>
+      </div>
+      <ul id="list">
+      </ul>
+
+
+
+    </div>
+
+    <br><br><br>
+  </div>
+
+  <div style="height:1000px"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+  <!-- lien ket voi functions.js -->
+
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig={
+      apiKey: "AIzaSyDDTtcBpcIPf38d2yVhMybr7F36v1LfCHA",
+      authDomain: "traffic-light-eee02.firebaseapp.com",
+      databaseURL: "https://traffic-light-eee02-default-rtdb.firebaseio.com",
+      projectId: "traffic-light-eee02",
+      storageBucket: "traffic-light-eee02.appspot.com",
+      messagingSenderId: "266513547999",
+      appId: "1:266513547999:web:6a9fcf0bc017e1c7ad1f6a",
+      measurementId: "G-6YBBCHLDXE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="./js/index.js"></script>
+
+
+</body>
+
+</html>

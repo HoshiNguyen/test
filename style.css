@@ -1,0 +1,277 @@
+:root {
+  --option: #33313B;
+  --select: #aa5b85;
+  --create: #007880;
+  --delete: #FDC57B;
+}
+
+
+.row {
+  display: flex;
+}
+
+.col-traffic_light {
+  width: 51.9%;
+}
+.col-dashboard {
+  width: 48.1%;
+}
+
+.traffic-light {
+  background-image: url(/img/crossroads-background.jpeg);
+  background-repeat: no-repeat;
+  /* width: 791px; */
+  height: 595px;
+  position: relative;
+}
+
+
+.traffic-light1 {
+  width: 112px;
+  height: 41px;
+  background-color: #333;
+  border-radius: 5px;
+  display: flex;
+  position: absolute;
+  left: 219px;
+  top: 172px;
+}
+
+.traffic-light2 {
+  width: 41px;
+  height: 104px;
+  background-color: #333;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  left: 265px;
+  top: 390px;
+}
+
+.traffic-light3 {
+  width: 112px;
+  height: 41px;
+  background-color: #333;
+  border-radius: 5px;
+  display: flex;
+  position: absolute;
+  left: 496px;
+  top: 389px;
+}
+
+.traffic-light4 {
+  width: 41px;
+  height: 104px;
+  background-color: #333;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  left: 499px;
+  top: 110px;
+}
+
+.bulb {
+  font-size: 18px;
+  /* font-weight: 550; */
+  color: #000000;
+  text-align: center;
+  line-height: 25px;
+  height: 25px;
+  width: 25px;
+  background-color: grey;
+  border-radius: 50%;
+  margin: 7px auto;
+  transition: background 300ms;
+}
+
+#current-value {
+  border-bottom: 1px solid #000;
+  background-color: rgb(201, 201, 234);
+  padding: 5px;
+}
+
+#read-g1, #read-y1, #read-r1, #read-g2, #read-y2, #read-r2 {
+  display: inline-block;
+  margin: 10px;
+}
+
+#current-name {
+  font-weight: 550;
+  color: rgb(20, 20, 111);
+}
+
+.options {
+  background-color: var(--option);
+  padding: 0 20px;
+}
+
+.options button {
+  padding: 8px;
+  margin: 14px 6px;
+}
+
+.options > div {
+  display: inline-block;
+}
+
+.select {
+  position: relative;
+}
+
+.form-select {
+  width: 300px;
+  position: absolute;
+  top: 64px;
+  left: 7px;
+  padding: 15px;
+  display: none;
+  border-radius: 10px;
+  background-color: var(--select);
+}
+
+.form-select::before {
+  content: "";
+  position: absolute;
+  top: 0.5px;
+  left: 2rem;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid var(--select);
+  transform: translateY(-100%);
+  transition: border-color 0.2s linear;
+}
+
+.form-select input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.add-mode {
+  position: relative;
+}
+
+.form-create {
+  position: absolute;
+  top: 64px;
+  left: -94px;
+  padding: 10px;
+  display: none;
+  border-radius: 10px;
+  background-color: var(--create);
+}
+
+.form-create::before {
+  content: "";
+  position: absolute;
+  top: 0.5px;
+  left: 8rem;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid var(--create);
+  transform: translateY(-100%);
+  transition: border-color 0.2s linear;
+}
+
+/*  */
+.delete-mode {
+  position: relative;
+}
+
+.form-delete {
+  position: absolute;
+  top: 64px;
+  left: -199px;
+  padding: 10px;
+  display: none;
+  border-radius: 10px;
+  background-color: var(--delete);
+}
+
+.form-delete::before {
+  content: "";
+  position: absolute;
+  top: 0.5px;
+  left: 15rem;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid var(--delete);
+  transform: translateY(-100%);
+  transition: border-color 0.2s linear;
+}
+
+.form-delete {
+  /* position: absolute; */
+  align-items: end;
+  display: none;
+}
+
+.form-heading {
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+}
+
+.form-create ul {
+  width: 284px;
+  float: right;
+}
+
+.form-create ul li {
+  display: inline-block;
+}
+
+
+.form-create li {
+  width: 110px;
+  margin: 15px; 
+}
+
+.form-create .name-input {
+  width: 235px;
+  margin: 5px 5px 0px 15px;
+}
+
+.form-create label {
+  font-size: 18px;
+}
+
+.form-create input {
+  display: block;
+  width: 90px;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
+
+.submit-btn {
+  width: 70px;
+  height: 35px;
+}
+
+.form-delete {
+  height: 150px;
+  width: 400px;
+}
+
+#name-delete {
+  width: 235px;
+  margin: 5px 5px 0px 15px;
+}
+
+
+
+/* ul{
+  position: absolute;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-flow: column;
+  grid-gap: 0 2em;
+  z-index: 20;
+}
+
+ul li{
+    display: inline-block;
+    width: 100%;
+    padding: 2px;
+} */
