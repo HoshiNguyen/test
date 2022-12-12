@@ -18,7 +18,7 @@
 }
 
 .traffic-light {
-  background-image: url(/img/crossroads-background.jpeg);
+  background-image: src('crossroads-background.jpeg');
   background-repeat: no-repeat;
   /* width: 791px; */
   height: 595px;
